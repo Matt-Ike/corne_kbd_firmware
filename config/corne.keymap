@@ -11,7 +11,7 @@
     keymap {
         compatible = "zmk,keymap";
 
-        default_layer {
+        BASE_LAYER {
             // -----------------------------------------------------------------------------------------
             // |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BKSP |
             // | CTRL |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
@@ -20,30 +20,57 @@
 
             display-name = "Base";
             bindings = <
-&kp ESCAPE  &kp Q  &kp W  &kp E             &kp R  &kp T        &kp Y      &kp U  &kp I      &kp O    &kp P     &kp BSPC
-&kp TAB     &kp A  &kp S  &kp D             &kp F  &kp G        &kp H      &kp J  &kp K      &kp L    &kp SEMI  &kp SQT
-&kp LSHFT   &kp Z  &kp X  &kp C             &kp V  &kp B        &kp N      &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp DELETE
-                          &kp LEFT_CONTROL  &mo 1  &kp ENTER    &kp SPACE  &mo 2  &kp RALT
+&kp ESCAPE        &kp Q  &kp W  &kp E         &kp R           &kp T        &kp Y          &kp U      &kp I      &kp O    &kp P     &kp DELETE
+&kp TAB           &kp A  &kp S  &kp D         &kp F           &kp G        &kp H          &kp J      &kp K      &kp L    &kp SEMI  &kp SQT
+&kp LEFT_CONTROL  &kp Z  &kp X  &kp C         &kp V           &kp B        &kp N          &kp M      &kp COMMA  &kp DOT  &kp FSLH  &mo 5
+                                &kp LEFT_GUI  &kp LEFT_SHIFT  &kp ENTER    &kp BACKSPACE  &kp SPACE  &kp RALT
             >;
         };
 
-        LOWER_LAYER {
+        SYM_NUM_LAYER {
             display-name = "Raise";
             bindings = <
-&kp ESCAPE      &kp EXCL  &kp AT  &kp HASH  &kp DLLR  &kp PRCNT    &trans     &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &trans  &trans  &kp BSPC
-&kp TAB         &trans    &trans  &trans    &trans    &trans       &trans     &kp LEFT_BRACE        &kp RIGHT_BRACE        &trans  &trans  &trans
-&kp LEFT_SHIFT  &trans    &trans  &trans    &trans    &trans       &trans     &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &trans  &trans  &kp TILDE
-                                  &kp LGUI  &trans    &kp ENTER    &kp SPACE  &trans                &trans
+&trans  &kp EXCL      &kp AT        &kp HASH          &kp DLLR              &kp PRCNT         &kp CARET        &kp AMPERSAND          &kp ASTRK          &kp GRAVE        &kp TILDE      &kp BSPC
+&trans  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3      &kp NUMBER_4          &kp N5            &kp NUMBER_6     &kp N7                 &kp N8             &kp N9           &kp N0         &trans
+&trans  &kp PLUS      &kp MINUS     &kp LEFT_BRACKET  &kp LEFT_PARENTHESIS  &kp LEFT_BRACE    &kp RIGHT_BRACE  &kp RIGHT_PARENTHESIS  &kp RIGHT_BRACKET  &kp KP_MULTIPLY  &kp KP_DIVIDE  &kp KP_EQUAL
+                                    &trans            &trans                &trans            &trans           &trans                 &trans
             >;
         };
 
-        RAISE_LAYER {
+        NAV_LAYER {
             display-name = "Lower";
             bindings = <
-&kp ESC  &kp K_CALC  &kp N1  &kp N2  &kp N3  &kp N0        &trans  &kp KP_PLUS      &kp KP_SUBTRACT  &trans  &kp KP_CLEAR  &kp BSPC
-&trans   &trans      &kp N4  &kp N5  &kp N6  &trans        &trans  &kp KP_ASTERISK  &kp KP_DIVIDE    &trans  &trans        &trans
-&trans   &trans      &kp N7  &kp N8  &kp N9  &kp PERIOD    &trans  &trans           &trans           &trans  &trans        &trans
-                             &trans  &trans  &kp ENTER     &trans  &trans           &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans    &kp UP_ARROW  &trans     &trans  &kp PAGE_UP  &kp END
+&trans  &trans  &trans  &trans  &trans  &trans    &kp LEFT  &kp DOWN      &kp RIGHT  &trans  &kp PG_DN    &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans    &trans        &trans     &trans  &kp HOME     &trans
+                        &trans  &trans  &trans    &trans    &trans        &trans
+            >;
+        };
+
+        FIGMA_LAYER {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+                        &trans  &trans  &trans    &trans  &trans  &trans
+            >;
+        };
+
+        GAME_LAYER {
+            bindings = <
+&kp ESCAPE      &kp Q  &kp E  &kp W   &kp R      &kp T        &trans  &trans  &trans  &trans  &trans  &trans
+&trans          &kp F  &kp A  &kp S   &kp D      &kp G        &trans  &trans  &trans  &trans  &trans  &trans
+&kp LEFT_SHIFT  &kp Z  &kp X  &kp C   &kp V      &kp B        &trans  &trans  &trans  &trans  &trans  &trans
+                              &trans  &kp LCTRL  &kp SPACE    &trans  &trans  &trans
+            >;
+        };
+
+        BLOCK_LAYER {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+                        &trans  &to 0   &to 3     &to 4   &trans  &trans
             >;
         };
     };
