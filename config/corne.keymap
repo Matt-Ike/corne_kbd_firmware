@@ -41,10 +41,10 @@
         FUNC_LAYER {
             display-name = "FUNC";
             bindings = <
-&kp F1      &kp F2        &kp F2        &kp F4            &kp F5        &kp F6             &kp F7    &kp F8        &kp F9     &kp F10  &kp F11  &kp F12
-&none       &kp K_PREV    &kp K_NEXT    &kp K_PLAY_PAUSE  &kp C_VOL_DN  &kp C_VOLUME_UP    &none     &kp UP_ARROW  &none      &none    &to 0    &to 1
-&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2      &bt BT_SEL 3  &bt BT_SEL 4       &kp LEFT  &kp DOWN      &kp RIGHT  &none    &to 2    &to 3
-                                        &trans            &trans        &kp ENTER          &trans    &trans        &trans
+&kp F1      &kp F2        &kp F2        &kp F4        &kp F5        &kp F6             &kp F7    &kp F8        &kp F9     &kp F10  &kp F11  &kp F12
+&kp K_PREV  &kp K_NEXT    &kp K_PP      &kp K_MUTE    &kp C_VOL_DN  &kp C_VOLUME_UP    &none     &kp UP_ARROW  &none      &none    &to 0    &to 1
+&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4       &kp LEFT  &kp DOWN      &kp RIGHT  &none    &to 2    &to 3
+                                        &trans        &trans        &kp ENTER          &trans    &trans        &trans
             >;
         };
 
